@@ -148,6 +148,11 @@ body {
   overflow-x: hidden;
 }
 
+::selection {
+  background: var(--eerie-black);
+  color: var(--pale-purple-pantone);
+}
+
 ::-webkit-scrollbar {
   width: 15px;
   height: 10px;
