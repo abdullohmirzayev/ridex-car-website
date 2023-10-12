@@ -4,12 +4,13 @@ window.addEventListener("DOMContentLoaded", () => {
     tabsContent = document.querySelectorAll(".tabcontent"),
     loader = document.querySelector(".loader");
 
+  // loader
   setTimeout(() => {
     loader.style.opacity = "0";
     setTimeout(() => {
       loader.style.display = "none";
     }, 500);
-  }, 3000);
+  }, 2500);
 
   function hideTabsContent() {
     tabsContent.forEach((item) => {
@@ -113,6 +114,42 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-
   setClock(".timer", deadline);
+
+  // Modal
+
+  const modalTrigger = document.querySelector("[data-modal]"),
+    modalCloseBtn = document.querySelector("[data-close]"),
+    modal = document.querySelector(".modal");
+
+  function openModal() {
+    modal.classList.add("show");
+    modal.classList.remove("hide");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.add("hide");
+    modal.classList.remove("show");
+    document.body.style.overflow = "";
+    clearInterval(modalTimerId);
+  }
+
+  modalTrigger.addEventListener("click", openModal);
+
+  modalCloseBtn.addEventListener("click", closeModal);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target == modal) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.code === "Escape" && modal.classList.contains("show")) {
+      closeModal();
+    }
+  });
+
+  const modalTimerId = setTimeout(openModal, 5000);
 });
