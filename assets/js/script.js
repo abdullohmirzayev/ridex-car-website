@@ -4,13 +4,13 @@ window.addEventListener("DOMContentLoaded", () => {
     tabsContent = document.querySelectorAll(".tabcontent"),
     loader = document.querySelector(".loader");
 
-  // loader
+  loader;
   setTimeout(() => {
     loader.style.opacity = "0";
     setTimeout(() => {
       loader.style.display = "none";
     }, 500);
-  }, 2500);
+  }, 200);
 
   function hideTabsContent() {
     tabsContent.forEach((item) => {
