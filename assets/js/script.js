@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       loader.style.display = "none";
     }, 500);
-  }, 200);
+  }, 2500);
 
   function hideTabsContent() {
     tabsContent.forEach((item) => {
