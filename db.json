@@ -1,0 +1,35 @@
+{
+  "blog": [
+    {
+      "icon": "person-add-outline",
+      "title": "Create a profile",
+      "descr": "If you are going to use a passage of Lorem Ipsum, you need to be sure.",
+      "classIcon": "card-icon icon-1"
+    },
+    {
+      "icon": "car-outline",
+      "title": "Tell us what car you want",
+      "descr": "Various versions have evolved over the years, sometimes by accident, ",
+      "classIcon": "card-icon icon-2"
+    },
+    {
+      "icon": "person-outline",
+      "title": "Match with seller",
+      "descr": "It to make a type specimen book. It has survived not only five centuries,",
+      "classIcon": "card-icon icon-3"
+    },
+    {
+      "icon": "person-outline",
+      "title": "Make a deal",
+      "descr": "There are many variations of passages of Lorem available, but the majority ",
+      "classIcon": "card-icon icon-4"
+    }
+  ],
+  "request": [
+    {
+      "name": "aaa",
+      "phone": "+998 91 942 7570",
+      "id": 1
+    }
+  ]
+}
