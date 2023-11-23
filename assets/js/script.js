@@ -351,37 +351,17 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  new Blog(
-    "person-add-outline",
-    "Create a profile",
-    "If you are going to use a passage of Lorem Ipsum, you need to be sure.",
-    "card-icon icon-1",
-    ".get-start .get-start-list"
-  ).render();
+  async function getRecource(url) {
+    const res = await fetch(url);
 
-  new Blog(
-    "car-outline",
-    "Tell us what car you want",
-    "Various versions have evolved over the years, sometimes by accident, ",
-    "card-icon icon-2",
-    ".get-start .get-start-list"
-  ).render();
+    return await res.json();
+  }
 
-  new Blog(
-    "person-outline",
-    "Match with seller",
-    "It to make a type specimen book. It has survived not only five centuries,  ",
-    "card-icon icon-3",
-    ".get-start .get-start-list"
-  ).render();
-
-  new Blog(
-    "card-outline",
-    "Make a deal",
-    "There are many variations of passages of Lorem available, but the majority ",
-    "card-icon icon-4",
-    ".get-start .get-start-list"
-  ).render();
+  getRecource("http://localhost:3000/blog").then((data) => {
+    data.forEach(({ icon, title, descr, classIcon }) => {
+      new Blog(icon, title, descr, classIcon, ".section .container").render();
+    });
+  });
 
   // Form
   const forms = document.querySelectorAll("form");
