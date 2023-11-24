@@ -25,21 +25,5 @@
       "classIcon": "card-icon icon-4"
     }
   ],
-  "request": [
-    {
-      "name": "aaa",
-      "phone": "+998 91 942 7570",
-      "id": 1
-    },
-    {
-      "name": "Abdukarim",
-      "phone": "+998 91 942 7570",
-      "id": 2
-    },
-    {
-      "name": "Abdukarim",
-      "phone": "+998 91 942 7570",
-      "id": 3
-    }
-  ]
+  "request": []
 }

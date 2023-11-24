@@ -351,15 +351,9 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  async function getRecource(url) {
-    const res = await fetch(url);
-
-    return await res.json();
-  }
-
-  getRecource("http://localhost:3000/blog").then((data) => {
-    data.forEach(({ icon, title, descr, classIcon }) => {
-      new Blog(icon, title, descr, classIcon, ".section .container").render();
+  axios.get("http://localhost:3000/blog").then((data) => {
+    data.data.forEach(({ icon, title, descr, classIcon }) => {
+      new Blog(icon, title, descr, classIcon, ".container .get-start-list").render();
     });
   });
 
