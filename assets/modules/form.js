@@ -1,3 +1,5 @@
+import { closeModal, openModal } from "./modal";
+
 function form() {
   // Form
   const forms = document.querySelectorAll("form");
@@ -20,7 +22,6 @@ function form() {
       },
       body: data,
     });
-
     return await res.json();
   }
 
@@ -80,4 +81,5 @@ function form() {
     }, 4000);
   }
 }
-module.exports = form;
+
+export default form;

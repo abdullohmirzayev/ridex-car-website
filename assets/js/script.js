@@ -1,17 +1,18 @@
-window.addEventListener("DOMContentLoaded", () => {
-  //js
+import clas from "../modules/class";
+import form from "../modules/form";
+import loader from "../modules/loader";
+import modal from "../modules/modal";
+import tab from "../modules/tab";
+import timer from "../modules/timer";
+import { openModal } from "../modules/modal";
 
-  const clas = require("../modules/class"),
-    form = require("../modules/form"),
-    loader = require("../modules/loader"),
-    modal = require("../modules/modal"),
-    tab = require("../modules/tap"),
-    timer = require("../modules/timer");
+window.addEventListener("DOMContentLoaded", () => {
+  const modalTimer = setTimeout(() => openModal(".modal", modalTimer), 5000);
 
   clas();
   form();
   loader();
-  modal();
+  modal("[data-modal]", ".modal", modalTimer);
   tab();
   timer();
 });
