@@ -47,6 +47,17 @@
       "monthly-pay": "",
       "year": "",
       "id": 4
+    },
+    {
+      "car-model": "",
+      "monthly-pay": "",
+      "year": "",
+      "id": 5
+    },
+    {
+      "name": "Abdukarim",
+      "phone": "+998 91 942 7570",
+      "id": 6
     }
   ]
 }
