@@ -1,11 +1,9 @@
-function timer() {
+function timer(id, deadline) {
   // Timer
 
-  const deadline = "2024-10-03";
-
-  function getTimeRemaining(endtime) {
+  function getTimeRemaining(endTime) {
     let days, hours, minutes, seconds;
-    const timer = Date.parse(endtime) - Date.parse(new Date());
+    const timer = Date.parse(endTime) - Date.parse(new Date());
 
     if (timer <= 0) {
       days = 0;
@@ -36,27 +34,18 @@ function timer() {
     }
   }
 
-  function setClock(selector, endtime) {
-    let days, hours, minutes, seconds;
-    const timer = document.querySelector(selector);
-
-    if (timer <= 0) {
-      days = 0;
-      hours = 0;
-      minutes = 0;
-      seconds = 0;
-    } else {
-      days = timer.querySelector("#days");
-      hours = timer.querySelector("#hours");
-      minutes = timer.querySelector("#minutes");
-      seconds = timer.querySelector("#seconds");
-      timeInterval = setInterval(updatClock, 1000);
-    }
+  function setClock(selector, endTime) {
+    const timer = document.querySelector(selector),
+      days = timer.querySelector("#days"),
+      hours = timer.querySelector("#hours"),
+      minutes = timer.querySelector("#minutes"),
+      seconds = timer.querySelector("#seconds"),
+      timeInterVal = setInterval(updatClock, 1000);
 
     updatClock();
 
     function updatClock() {
-      const t = getTimeRemaining(endtime);
+      const t = getTimeRemaining(endTime);
 
       days.innerHTML = getZero(t.days);
       hours.innerHTML = getZero(t.hours);
@@ -64,10 +53,11 @@ function timer() {
       seconds.innerHTML = getZero(t.seconds);
 
       if (t.timer <= 0) {
-        clearInterval(timeInterval);
+        clearInterval(timeInterVal);
       }
     }
   }
-  setClock(".timer", deadline);
+
+  setClock(id, deadline);
 }
 export default timer;

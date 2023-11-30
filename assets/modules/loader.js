@@ -1,5 +1,5 @@
-function loader() {
-  loader = document.querySelector(".loader");
+function loader(loading) {
+  loader = document.querySelector(loading);
 
   // loader
   setTimeout(() => {

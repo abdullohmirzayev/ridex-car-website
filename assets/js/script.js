@@ -10,9 +10,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const modalTimer = setTimeout(() => openModal(".modal", modalTimer), 5000);
 
   clas();
-  form();
-  loader();
+  form("form", modalTimer);
+  loader(".loader");
   modal("[data-modal]", ".modal", modalTimer);
-  tab();
-  timer();
+  tab(
+    ".tabheader__item",
+    ".tabcontent",
+    ".tabheader__items",
+    "tabheader__item_active"
+  );
+  timer(".timer", "2024-02-26");
 });
